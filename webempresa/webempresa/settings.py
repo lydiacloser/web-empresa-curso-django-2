@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z&khc^ibx_tit0%)z1u*5ew^v%l^seh767**o&^n)i38te#+2$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lydiacloser.pythonanywhere.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -81,12 +81,19 @@ WSGI_APPLICATION = 'webempresa.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.oracle',
+#        'NAME': '127.0.0.1:1521/xe',
+#        'USER': 'C##WEB_EMPRESA',
+#        'PASSWORD': 'des',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/xe',
-        'USER': 'C##WEB_EMPRESA',
-        'PASSWORD': 'des',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
